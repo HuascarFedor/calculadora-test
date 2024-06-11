@@ -21,8 +21,8 @@ describe('CalculadoraService', () => {
     expect(service.sumar(1, 2)).toBe(3);
   });
 
-  it('restar 5 - 2 resuta 3', () => {
-    expect(service.restar(5, 2)).toBe(3);
+  it('restar 35 - 12 resuta 23', () => {
+    expect(service.restar(35, 12)).toBe(23);
   });
 
   it('multiplicar 6 * 2 resuta 12', () => {
