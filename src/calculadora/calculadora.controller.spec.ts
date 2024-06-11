@@ -28,25 +28,25 @@ describe('CalculadoraController', () => {
 
   it('Debería restar dos números', () => {
     jest.spyOn(service, 'restar').mockImplementation(() => 7);
-    expect(service.restar(10, 3)).toBe(7);
+    expect(controller.restar(10, 3)).toBe(7);
   });
 
   it('Debería multiplicar dos números', () => {
     jest.spyOn(service, 'multiplicar').mockImplementation(() => 12);
-    expect(service.multiplicar(6, 2)).toBe(12);
+    expect(controller.multiplicar(6, 2)).toBe(12);
   });
 
   describe('dividir', () => {
     it('Debería dividir dos números', () => {
       jest.spyOn(service, 'dividir').mockImplementation(() => 4);
-      expect(service.dividir(8, 2)).toBe(4);
+      expect(controller.dividir(8, 2)).toBe(4);
     });
 
-    it('debería lanzar una BadRequestException cuando el divisor es 0', () => {
+    it('Debería lanzar una BadRequestException cuando el divisor es 0', () => {
       jest.spyOn(service, 'dividir').mockImplementation(() => {
         throw new BadRequestException();
       });
-      expect(() => service.dividir(9, 0)).toThrow(BadRequestException);
+      expect(() => controller.dividir(9, 0)).toThrow(BadRequestException);
     });
   });
 });
